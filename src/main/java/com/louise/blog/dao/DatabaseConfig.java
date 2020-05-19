@@ -4,12 +4,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 
-
 @Configuration
 public class DatabaseConfig {
 
     @Bean
-    public DriverManagerDataSource getDataSource() {
+    public DriverManagerDataSource mysqlDataSource() {
 
         DriverManagerDataSource bds = new DriverManagerDataSource();
         bds.setDriverClassName("com.mysql.cj.jdbc.Driver");

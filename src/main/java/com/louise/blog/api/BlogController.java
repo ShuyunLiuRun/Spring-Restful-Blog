@@ -22,8 +22,6 @@ public class BlogController {
         this.service = service;
     }
 
-    @Autowired
-    private DataSource dataSource;
 
     @PostMapping
     public void addBlog(@RequestBody Blog blog){

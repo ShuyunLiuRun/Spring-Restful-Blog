@@ -1,6 +1,7 @@
 package com.louise.blog.dao;
 
 import com.louise.blog.model.Blog;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -18,6 +19,7 @@ import java.util.UUID;
 public class BlogDao implements IBlogDao{
 
     private JdbcTemplate jdbcTemplate;
+
 
     public BlogDao(DataSource dataSource){
         jdbcTemplate = new JdbcTemplate(dataSource);
