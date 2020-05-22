@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 //只能有一个service文件（因为需要用这个service class来声明一个service在controller中使用）
@@ -24,8 +23,7 @@ public class BlogService {
     }
 
     public boolean addBlog(String content,String title){
-        UUID id = UUID.randomUUID();
-        Blog b = new Blog(id,title,content);
+        Blog b = new Blog(title,content);
         return blogDao.insertBlog(b);
     }
 
@@ -33,21 +31,21 @@ public class BlogService {
         return blogDao.selectAllBlogs();
     }
 
-    public Optional<Blog> selectBlogById(UUID id){
+    public Optional<Blog> selectBlogById(int id){
         return blogDao.selectBlogById(id);
     }
 
-    public boolean updateBlog(UUID id, String title, String content){
+    public boolean updateBlog(int id, String title, String content){
         Blog b = new Blog(id,title,content);
         return blogDao.updateBlog(id,b);
     }
 
-    public boolean updateBlog(UUID id, String content){
+    public boolean updateBlog(int id, String content){
         Blog b = new Blog(id," " , content);
         return blogDao.updateBlog(id,b);
     }
 
-    public boolean deleteBlog(UUID id){
+    public boolean deleteBlog(int id){
         return blogDao.deleteBlog(id);
     }
 }

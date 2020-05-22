@@ -1,7 +1,6 @@
 package com.louise.blog.dao;
 
 import com.louise.blog.model.Blog;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -13,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
+
 
 @Repository("BlogDao")
 public class BlogDao implements IBlogDao{
@@ -27,8 +26,8 @@ public class BlogDao implements IBlogDao{
 
     @Override
     public boolean insertBlog(Blog blog) {
-        String sql = "INSERT INTO blog (article,blogtitle,uuid) VALUES (?,?,?)";
-        jdbcTemplate.update(sql,blog.getBody(),blog.getTitle(),blog.getId());
+        String sql = "INSERT INTO blog (article,blogtitle) VALUES (?,?)";
+        jdbcTemplate.update(sql,blog.getBody(),blog.getTitle());
         return true;
     }
 
@@ -51,8 +50,8 @@ public class BlogDao implements IBlogDao{
         return blogList;
     }
 
-    private Blog selectBlogBySingleID(UUID id){
-        String sql = "SELECT * FROM blog WHERE uuid=" + id;
+    private Blog selectBlogBySingleID(int id){
+        String sql = "SELECT * FROM blog WHERE id=" + id;
 
         return jdbcTemplate.query(sql, new ResultSetExtractor<Blog>() {
 
@@ -71,22 +70,22 @@ public class BlogDao implements IBlogDao{
     }
 
     @Override
-    public Optional<Blog> selectBlogById(UUID id) {
+    public Optional<Blog> selectBlogById(int id) {
         Blog blog = selectBlogBySingleID(id);
         return Optional.ofNullable(blog);
     }
 
     @Override
-    public boolean updateBlog(UUID id, Blog blog) {
+    public boolean updateBlog(int id, Blog blog) {
         String sql = "UPDATE blog SET article=?, blogtitle=?, "
-                + "WHERE uuid=?";
+                + "WHERE id=?";
         jdbcTemplate.update(sql,blog.getBody(),blog.getTitle());
         return true;
     }
 
     @Override
-    public boolean deleteBlog(UUID id) {
-        String sql = "DELETE FROM blog WHERE uuid=?";
+    public boolean deleteBlog(int id) {
+        String sql = "DELETE FROM blog WHERE id=?";
         jdbcTemplate.update(sql, id);
         return true;
     }

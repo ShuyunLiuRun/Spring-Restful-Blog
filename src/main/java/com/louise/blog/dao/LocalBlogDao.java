@@ -6,14 +6,14 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
+
 
 @Repository("localBlogDao")
 public class LocalBlogDao implements IBlogDao{
     private static List<Blog> DB = new ArrayList<>();
 
     public LocalBlogDao() {
-        DB.add(new Blog(UUID.randomUUID(),"First Blog","Blog body"));
+        DB.add(new Blog("First Blog","Blog body"));
     }
 
     @Override
@@ -28,7 +28,7 @@ public class LocalBlogDao implements IBlogDao{
     }
 
     @Override
-    public Optional<Blog> selectBlogById(UUID id) {
+    public Optional<Blog> selectBlogById(int id) {
         try{
             for(Blog b:DB){
             if(b.getId() == id){
@@ -43,7 +43,7 @@ public class LocalBlogDao implements IBlogDao{
     }
 
     @Override
-    public boolean updateBlog(UUID id, Blog blog) {
+    public boolean updateBlog(int id, Blog blog) {
         for(Blog b : DB){
             if(b.getId()==id){
                 DB.remove(b);
@@ -54,7 +54,7 @@ public class LocalBlogDao implements IBlogDao{
     }
 
     @Override
-    public boolean deleteBlog(UUID id) {
+    public boolean deleteBlog(int id) {
         for(Blog b : DB){
             if(b.getId()==id){
                 DB.remove(b);

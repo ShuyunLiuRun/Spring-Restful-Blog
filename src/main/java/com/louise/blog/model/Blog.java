@@ -2,18 +2,17 @@ package com.louise.blog.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.UUID;
 
 //model作用大概是存储页面数据？
 public class Blog {
-    private  UUID id;
+    private  int id;
     private  String title;
     private  String body;
 
     public Blog() {
     }
 
-    public Blog(@JsonProperty("id") UUID id,
+    public Blog(@JsonProperty("id") int id,
                 @JsonProperty("title") String title,
                 @JsonProperty("body") String body) {
         this.id = id;
@@ -21,7 +20,13 @@ public class Blog {
         this.body = body;
     }
 
-    public void setId(UUID id) {
+    public Blog(@JsonProperty("title")String title,
+                @JsonProperty("body")String body) {
+        this.title = title;
+        this.body = body;
+    }
+
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -33,7 +38,7 @@ public class Blog {
         this.body = body;
     }
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 

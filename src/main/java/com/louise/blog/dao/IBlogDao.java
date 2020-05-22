@@ -4,7 +4,7 @@ import com.louise.blog.model.Blog;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
+
 
 public interface IBlogDao {
     //CRUD
@@ -12,9 +12,9 @@ public interface IBlogDao {
     boolean insertBlog(Blog blog);
     //Read
     List<Blog> selectAllBlogs();
-    Optional<Blog> selectBlogById(UUID id);
+    Optional<Blog> selectBlogById(int id);
     //Update
-    boolean updateBlog(UUID id, Blog blog);
+    boolean updateBlog(int id, Blog blog);
     //Delete
-    boolean deleteBlog(UUID id);
+    boolean deleteBlog(int id);
 }
