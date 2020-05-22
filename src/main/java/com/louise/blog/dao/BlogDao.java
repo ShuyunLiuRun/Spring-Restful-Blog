@@ -42,6 +42,7 @@ public class BlogDao implements IBlogDao{
 
                 aBlog.setBody(rs.getString("article"));
                 aBlog.setTitle(rs.getString("blogtitle"));
+                aBlog.setId(rs.getInt("blogid"));
 
                 return aBlog;
             }
@@ -51,7 +52,7 @@ public class BlogDao implements IBlogDao{
     }
 
     private Blog selectBlogBySingleID(int id){
-        String sql = "SELECT * FROM blog WHERE id=" + id;
+        String sql = "SELECT * FROM blog WHERE blogid=" + id;
 
         return jdbcTemplate.query(sql, new ResultSetExtractor<Blog>() {
 
@@ -76,16 +77,16 @@ public class BlogDao implements IBlogDao{
     }
 
     @Override
-    public boolean updateBlog(int id, Blog blog) {
-        String sql = "UPDATE blog SET article=?, blogtitle=?, "
-                + "WHERE id=?";
-        jdbcTemplate.update(sql,blog.getBody(),blog.getTitle());
+    public boolean updateBlog(Blog blog) {
+        String sql = "UPDATE blog SET article=?, blogtitle=?"
+                + "WHERE blogid=?";
+        jdbcTemplate.update(sql,blog.getBody(),blog.getTitle(),blog.getId());
         return true;
     }
 
     @Override
     public boolean deleteBlog(int id) {
-        String sql = "DELETE FROM blog WHERE id=?";
+        String sql = "DELETE FROM blog WHERE blogid=?";
         jdbcTemplate.update(sql, id);
         return true;
     }

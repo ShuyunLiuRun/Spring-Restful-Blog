@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @CrossOrigin(origins = "http://localhost:8001")
@@ -29,10 +30,22 @@ public class BlogController {
 
     @GetMapping
     public List<Blog> getAllBlog(){
-
         return service.selectAllBlogs();
     }
 
+    @PostMapping(path = "/update")
+    public boolean updateBlog(@RequestBody Blog blog){
+        return service.updateBlog(blog.getId(),blog.getTitle(),blog.getBody());
+    }
 
+    @GetMapping(path = "/getSingle/{id}")
+    public Optional<Blog> getSingleBlog(@PathVariable int id){
+        return service.selectBlogById(id);
+    }
+
+    @GetMapping(path = "/delete/{id}")
+    public boolean deleteBlog(@PathVariable int id){
+        return service.deleteBlog(id);
+    }
 
 }

@@ -37,12 +37,7 @@ public class BlogService {
 
     public boolean updateBlog(int id, String title, String content){
         Blog b = new Blog(id,title,content);
-        return blogDao.updateBlog(id,b);
-    }
-
-    public boolean updateBlog(int id, String content){
-        Blog b = new Blog(id," " , content);
-        return blogDao.updateBlog(id,b);
+        return blogDao.updateBlog(b);
     }
 
     public boolean deleteBlog(int id){

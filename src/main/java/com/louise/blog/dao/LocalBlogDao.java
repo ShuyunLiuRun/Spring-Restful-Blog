@@ -43,14 +43,8 @@ public class LocalBlogDao implements IBlogDao{
     }
 
     @Override
-    public boolean updateBlog(int id, Blog blog) {
-        for(Blog b : DB){
-            if(b.getId()==id){
-                DB.remove(b);
-                DB.add(blog);
-            }
-        }
-        return true;
+    public boolean updateBlog( Blog blog) {
+        return false;
     }
 
     @Override

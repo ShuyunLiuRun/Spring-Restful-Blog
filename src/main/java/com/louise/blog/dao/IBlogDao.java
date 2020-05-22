@@ -14,7 +14,7 @@ public interface IBlogDao {
     List<Blog> selectAllBlogs();
     Optional<Blog> selectBlogById(int id);
     //Update
-    boolean updateBlog(int id, Blog blog);
+    boolean updateBlog(Blog blog);
     //Delete
     boolean deleteBlog(int id);
 }
