@@ -53,19 +53,19 @@ public class BlogDao implements IBlogDao{
 
     private Blog selectBlogBySingleID(int id){
         String sql = "SELECT * FROM blog WHERE blogid=" + id;
-
+        Blog b = new Blog();
         return jdbcTemplate.query(sql, new ResultSetExtractor<Blog>() {
 
             @Override
             public Blog extractData(ResultSet rs) throws SQLException,
                     DataAccessException {
                 if (rs.next()) {
-                    Blog b = new Blog();
-
-                    return b;
+                    b.setId(rs.getInt("blogid"));
+                    b.setTitle(rs.getString("blogtitle"));
+                    b.setBody(rs.getString("article"));
                 }
 
-                return null;
+                return b;
             }
         });
     }
