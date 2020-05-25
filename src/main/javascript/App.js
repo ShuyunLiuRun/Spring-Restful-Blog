@@ -17,10 +17,10 @@ class App extends Component{
             .then(response => response.json())
             .then(blog => {
                 this.setState({
-                loaded:true,
-                loading:false,
-                data: blog
-            })})
+                    loaded:true,
+                    loading:false,
+                    data: blog
+                })})
     }
 
     render(){
