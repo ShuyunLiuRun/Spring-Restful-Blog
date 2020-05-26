@@ -1,18 +1,16 @@
 body{
-    background-image: url("../../../img/North_Star_-_invitation_background.png");
-    background-repeat: repeat-y;
-    background-size: cover;
+    /*background-image: url("../../../img/North_Star_-_invitation_background.png");*/
+    /*background-repeat: repeat-y;*/
+    /*background-size: cover;*/
     color:white;
+    background-color: black;
 }
 
-.app{
+.blog-list{
     border-width: 1px;
     border-color: darkgray;
     border-radius: 3px;
     margin:auto;
-}
-
-.li{
     list-style-type: none;
 }
 

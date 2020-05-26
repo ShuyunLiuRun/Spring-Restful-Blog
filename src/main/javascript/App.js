@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import '../css/style.css';
+
 class App extends Component{
     constructor(props){
         super(props);
         this.state ={
-            data:[],
+            data:{
+                "title":"default title",
+                "body":"default body"
+            },
             loaded:false,
             loading:false
         }

@@ -24,7 +24,13 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.5.3",
+    "css-selector": "^0.1.0",
     "html-webpack-plugin": "^4.3.0",
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.2.1",
     "webpack": "^4.43.0"
   }
 }
