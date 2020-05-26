@@ -1,9 +1,8 @@
 body{
-    /*background-image: url("../../../img/North_Star_-_invitation_background.png");*/
-    /*background-repeat: repeat-y;*/
-    /*background-size: cover;*/
+    background-image: url("/img/North_Star_-_invitation_background.png");
+    background-repeat: repeat-y;
+    background-size: cover;
     color:white;
-    background-color: black;
 }
 
 .blog-list{
