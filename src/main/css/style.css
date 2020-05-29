@@ -6,10 +6,17 @@ body{
 }
 
 .blog-list{
-    border-width: 1px;
-    border-color: darkgray;
+
+    border-color: red;
     border-radius: 3px;
     margin:auto;
     list-style-type: none;
 }
 
+.single-blog{
+    border-style: dashed;
+    border-width:1px;
+    border-radius: 6px;
+    border-color: white;
+    margin:5px 35px 0 5px;
+}

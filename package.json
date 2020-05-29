@@ -30,6 +30,8 @@
     "less": "^3.11.1",
     "less-loader": "^6.1.0",
     "postcss-loader": "^3.0.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0"
   }

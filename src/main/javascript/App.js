@@ -1,46 +1,32 @@
-import React, { Component } from 'react';
-import '../css/style.css';
+import React from "react";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import Home from './components/Home.js'
 
-class App extends Component{
-    constructor(props){
-        super(props);
-        this.state ={
-            data:{
-                "title":"default title",
-                "body":"default body"
-            },
-            loaded:false,
-            loading:false
-        }
-    }
 
-    componentWillMount(){
-        this.setState({loading:true});
-        fetch('http://localhost:8080/api/blog',{
-            method: 'GET'
-        })
-            .then(response => response.json())
-            .then(blog => {
-                this.setState({
-                    loaded:true,
-                    loading:false,
-                    data: blog
-                })})
-    }
+export default function App() {
+    return(
+        <Router>
+            <div className="home">
+                <p><link to="/">Home</link></p>
+            <hr/>
 
-    render(){
-        const {data,loading,loaded} = this.state;
-        return(loading) ?
-            <div>Loading</div>:
-            <ol className="blog-list">
-                {data.map((blog,i) => {
-                    const {title,body} = blog;
-                    return <li key={i}>
-                        <h3>{title}</h3>
-                        <p>{body}</p>
-                    </li>
-                })}
-            </ol>
-    }
+            <Switch>
+                <Route exact path="/">
+                    <Home/>
+                </Route>
+            </Switch>
+            </div>
+        </Router>
+    )
 }
-export default App;
+
+function Home() {
+    return(
+        <Home/>
+    )
+}
