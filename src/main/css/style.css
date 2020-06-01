@@ -20,3 +20,17 @@ body{
     border-color: white;
     margin:5px 35px 0 5px;
 }
+
+.blog-title{
+    margin-bottom: 10px;
+}
+.hr-blogTitle{
+    margin: 5px 3px 5px 3px;
+    width:70%;
+    color: darkgray;
+}
+.hr-blogList{
+    margin-top: 8px;
+    width:90%;
+    color: darkgray;
+}

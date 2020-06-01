@@ -7,6 +7,7 @@ const blogList = ({data}) =>
         {data.map((blog,i) => {
             return <li key={i}>
                 <Blog {...blog}/>
+                <hr className="hr-blogList"/>
             </li>
         })}
     </ol>

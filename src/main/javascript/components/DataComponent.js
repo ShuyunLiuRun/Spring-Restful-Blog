@@ -14,7 +14,7 @@ class DataComponent extends React.Component{
 
     componentDidMount(){
         this.setState({loading:true})
-        fetch('http://localhost:8080/api/blog')
+        fetch(url)
             .then(response => response.json())
             .then(data =>
                 this.setState({

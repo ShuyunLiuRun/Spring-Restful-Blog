@@ -3,7 +3,7 @@ package com.louise.blog.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-//model作用大概是存储页面数据？
+//model作用大概是存储页面数据
 public class Blog {
     private  int id;
     private  String title;
