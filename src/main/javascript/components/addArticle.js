@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
+import {Editor} from 'react-draft-wysiwyg'
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 const AddArticle = ()=>
     <div className="add-article">
@@ -6,7 +8,11 @@ const AddArticle = ()=>
             <p>Add article name:</p>
             <input type="text" id="new-title" name="new-title"/><br/><br/>
             <p>Add article:</p>
-            <textarea id="new-article" name="new-article" rows="32" cols="190" placeholder="type your article here..."/><br/>
+            <Editor
+                wrapperClassName="demo-wrapper"
+                editorClassName="demo-editor"
+            />
+            <br/>
             <input type="submit" value="Submit"/>
         </form>
     </div>

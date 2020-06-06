@@ -6,7 +6,6 @@ body{
 }
 
 .blog-list{
-
     border-color: red;
     border-radius: 3px;
     margin:auto;
@@ -33,4 +32,10 @@ body{
     margin-top: 8px;
     width:90%;
     color: darkgray;
+}
+.rdw-editor-wrapper {
+    width: 92%;
+    box-sizing: content-box;
+    color: black;
+    margin: auto;
 }
