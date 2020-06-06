@@ -1,5 +1,6 @@
 import React from "react";
 import Home from './components/Home.js';
+import AddArticle from './components/addArticle.js';
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,9 +13,13 @@ export default function App() {
         <Router>
             <div>
                 <h1><Link to="/">Louise Home</Link></h1>
+                <Link to="/addArticle">Add Article</Link>
                 <Switch>
-                    <Route path="/">
+                    <Route exact path="/">
                         <Home/>
+                    </Route>
+                    <Route path="/addArticle">
+                        <AA />
                     </Route>
                 </Switch>
             </div>
@@ -22,3 +27,8 @@ export default function App() {
     );
 }
 
+function AA() {
+    return (
+        <AddArticle />
+    );
+}
