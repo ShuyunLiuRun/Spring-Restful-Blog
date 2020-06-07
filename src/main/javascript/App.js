@@ -1,6 +1,6 @@
 import React from "react";
 import Home from './components/Home.js';
-import AddArticle from './components/addArticle.js';
+import NewArticle from './components/addArticle.js';
 import {
     BrowserRouter as Router,
     Switch,
@@ -29,6 +29,6 @@ export default function App() {
 
 function AA() {
     return (
-        <AddArticle />
+        <NewArticle />
     );
 }

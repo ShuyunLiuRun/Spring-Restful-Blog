@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+//service位于DAO下一步，用于包装DAO的方法，使其更精准，更适用于此app
 //只能有一个service文件（因为需要用这个service class来声明一个service在controller中使用）
 //但是可以通过@Repository来创建不同的service，并给它们设置不同的名字
 @Repository("myfirstservice")

@@ -23,7 +23,7 @@ public class BlogController {
     }
 
 
-    @PostMapping
+    @PostMapping(path="/addBlog")
     public void addBlog(@RequestBody Blog blog){
         service.addBlog(blog.getBody(), blog.getTitle());
     }

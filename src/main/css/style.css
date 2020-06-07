@@ -39,3 +39,8 @@ body{
     color: black;
     margin: auto;
 }
+
+.rdw-editor-main {
+    height: 200px;
+    background-color: white;
+}
